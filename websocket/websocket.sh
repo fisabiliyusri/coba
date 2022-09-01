@@ -1,6 +1,5 @@
 #!/bin/bash
-# Proxy For Edukasi & Imclass
-# SL
+# Proxy Websocket Cloudflare by MANTAPV3
 # ==========================================
 
 # Link Hosting Kalian
@@ -13,7 +12,7 @@ chmod +x /usr/local/bin/ws-nontls
 # Installing Service
 cat > /etc/systemd/system/ws-nontls.service << END
 [Unit]
-Description=Python Proxy Mod By Akbar Maulana
+Description=Python Proxy
 Documentation=https://nekopi.care
 After=network.target nss-lookup.target
 
@@ -41,7 +40,7 @@ chmod +x /usr/local/bin/ws-ovpn
 # Installing Service
 cat > /etc/systemd/system/ws-ovpn.service << END
 [Unit]
-Description=Python Proxy Mod By LamVpn
+Description=Python Proxy
 Documentation=https://nekopoi.care
 After=network.target nss-lookup.target
 
@@ -69,7 +68,7 @@ chmod +x /usr/local/bin/ws-tls
 # Installing Service
 cat > /etc/systemd/system/ws-tls.service << END
 [Unit]
-Description=Python Proxy Mod By geovpn
+Description=Python Proxy
 Documentation=https://nekopoi.care
 After=network.target nss-lookup.target
 
