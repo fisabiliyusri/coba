@@ -45,6 +45,13 @@ apt install libssl1.0-dev -y
 apt install dos2unix -y
 
 #
+# install
+apt-get --reinstall --fix-missing install -y bzip2 gzip coreutils wget screen rsyslog iftop htop net-tools zip unzip wget net-tools curl nano sed screen gnupg gnupg1 bc apt-transport-https build-essential dirmngr libxml-parser-perl neofetch git lsof
+
+# install webserver
+apt -y install nginx php php-fpm php-cli php-mysql libxml-parser-perl
+
+#
 apt update -y
 apt install -y python3 python3-dnslib net-tools
 apt install ncurses-utils -y
