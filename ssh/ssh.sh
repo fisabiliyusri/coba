@@ -88,6 +88,7 @@ sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
 
 #Dropbear
 wget -O /etc/default/dropbear "https://${akbarvpn}/dropbear"
+chmod 644 /etc/default/dropbear
 echo "/bin/false" >> /etc/shells
 echo "/usr/sbin/nologin" >> /etc/shells
 /etc/init.d/dropbear restart
