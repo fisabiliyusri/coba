@@ -1,6 +1,6 @@
 [Unit]
 Description=Python Proxy
-Documentation=https://t.me/geovpn
+Documentation=https://nekopoi.care
 After=network.target nss-lookup.target
 
 [Service]
