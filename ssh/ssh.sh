@@ -83,10 +83,19 @@ ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
 
 #OpenSSH
-
+echo "Port 169" >> /etc/ssh/sshd_config
+echo "Port 99" >> /etc/ssh/sshd_config
+echo "Port 3369" >> /etc/ssh/sshd_config
+echo "Port 2269" >> /etc/ssh/sshd_config
+echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
+echo "X11Forwarding yes" >> /etc/ssh/sshd_config
+echo "AllowTcpForwarding yes" >> /etc/ssh/sshd_config
+echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config
+sed -i 's/#AllowTcpForwarding yes/AllowTcpForwarding yes/g' /etc/ssh/sshd_config
 /etc/init.d/ssh restart
 
 #Dropbear
+apt -y install dropbear
 wget -O /etc/default/dropbear "https://${akbarvpn}/dropbear"
 chmod 644 /etc/default/dropbear
 echo "/bin/false" >> /etc/shells
@@ -98,4 +107,5 @@ echo "Banner /etc/issue.net" >>/etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 
 # Ganti Banner
-wget -O /etc/issue.net "https://${akbarvpn}/dropber"
+wget -O /etc/issue.net "https://${akbarvpn}/issue.net"
+#
