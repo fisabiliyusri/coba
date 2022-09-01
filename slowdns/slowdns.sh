@@ -6,6 +6,9 @@ apt update -y
 rm -rf /etc/slowdns
 mkdir -m 777 /etc/slowdns
 nameserver=$(cat /etc/slowdns/nsdomain)
+# SSH SlowDNS
+wget -qO- -O /etc/ssh/sshd_config https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/sshd_config
+systemctl restart sshd
 #
 wget -q -O /etc/slowdns/server.key "https://raw.githubusercontent.com/fisabiliyusri/SLDNS/main/slowdns/server.key"
 wget -q -O /etc/slowdns/server.pub "https://raw.githubusercontent.com/fisabiliyusri/SLDNS/main/slowdns/server.pub"
