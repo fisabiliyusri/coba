@@ -14,7 +14,7 @@ LIGHT='\033[0;37m'
 MYIP=$(wget -qO- ipinfo.io/ip);
 # ==================================================
 # Link Hosting Kalian
-akbarvpn="raw.githubusercontent.com/fisabiliyusri/Mantap/main/ssh"
+akbarvpn="raw.githubusercontent.com/fisabiliyusri/coba/main/ssh"
 #
 # initializing var
 export DEBIAN_FRONTEND=noninteractive
@@ -87,7 +87,7 @@ sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
 /etc/init.d/ssh restart
 
 #Dropbear
-
+wget -O /etc/default/dropbear "https://${akbarvpn}/dropbear"
 echo "/bin/false" >> /etc/shells
 echo "/usr/sbin/nologin" >> /etc/shells
 /etc/init.d/dropbear restart
@@ -97,4 +97,4 @@ echo "Banner /etc/issue.net" >>/etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 
 # Ganti Banner
-wget -O /etc/issue.net "https://${akbarvpn}/issue.net"
+wget -O /etc/issue.net "https://${akbarvpn}/dropber"
