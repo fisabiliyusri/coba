@@ -60,7 +60,45 @@ sleep 1
 echo -e "[ ${green}INFO${NC} ] Downloading and Installing Certificate"
 echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal Sertifikat"
 
+sleep 1
+echo -e "[ ${green}SERVICE${NC} ] Restart All service"
+systemctl daemon-reload
 
+sleep 1
+echo -e "[ ${green}SERVICE${NC} ]  Enable & restart SSH OpenSSH Dropbear"
+systemctl restart sshd
+/etc/init.d/ssh restart
+systemctl enable dropbear
+systemctl restart dropbear
+/etc/init.d/dropbear restart
 
+sleep 1
+echo -e "[ ${green}SERVICE${NC} ]  Enable & restart NGINX  "
+systemctl enable nginx
+systemctl restart nginx
+/etc/init.d/nginx restart
+
+sleep 1
+echo -e "[ ${green}SERVICE${NC} ]  Enable & restart SSH Websocket "
+systemctl enable xray
+systemctl restart xray
+
+sleep 1
+echo -e "[ ${green}SERVICE${NC} ]  Enable & restart SSLH "
+systemctl enable sslh
+systemctl restart sslh
+/etc/init.d/sslh restart
+
+sleep 1
+echo -e "[ ${green}SERVICE${NC} ]  Enable & restart Stunnel "
+systemctl enable stunnel5
+systemctl restart stunnel5
+/etc/init.d/stunnel5 restart
+
+sleep 1
+echo -e "[ ${green}SERVICE${NC} ]  Enable & restart xray "
+systemctl enable xray
+systemctl restart xray
+systemctl restart nginx
 
 
