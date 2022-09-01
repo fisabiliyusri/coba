@@ -14,8 +14,10 @@ echo "Progress..."
 echo "Sedang berlangsung..."
 sleep 3
 echo "please read, the process of installing all scripts takes 10 minutes to 30 minutes"
-echo "silahkan dibaca, proses pemasangan semua script memakan waktu 10 menit sampai 30 menit"
+echo "silahkan dibaca, proses pemasangan semua script memakan waktu paling lama 10 menit sampai 30 menit"
+echo "If it's still in the installation stage..."
 echo "do not exit terminal or application"
+echo "Jika masih dalam tahap instalasi..."
 echo "jangan keluar dari terminal atau aplikasi"
 echo -e "[ ${green}INFO${NC} ] in the process of installing tools"
 echo -e "[ ${green}INFO${NC} ] dalam proses pemasangan alat"
@@ -117,4 +119,6 @@ systemctl enable xray
 systemctl restart xray
 systemctl restart nginx
 
+
+# Status
 
