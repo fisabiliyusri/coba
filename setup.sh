@@ -56,7 +56,9 @@ sleep 1
 echo -e "[ ${green}INFO${NC} ] Downloading and Installing MENU"
 echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal MENU"
 
-
+sleep 1
+echo -e "[ ${green}INFO${NC} ] Downloading and Installing Certificate"
+echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal Sertifikat"
 
 
 
