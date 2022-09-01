@@ -60,11 +60,11 @@ END
 chmod +x /etc/systemd/system/client-sldns.service
 chmod +x /etc/systemd/system/server-sldns.service
 
-# // Enable & Start Service
-# Accept port SLOWDNS
+# // Stop SlowDNS
 systemctl daemon-reload
 pkill sldns-server
 pkill sldns-client
+# Accept port SlowDNS
 iptables -I INPUT -p udp --dport 5300 -j ACCEPT
 iptables -t nat -I PREROUTING -p udp --dport 53 -j REDIRECT --to-ports 5300
 iptables-save > /etc/iptables.up.rules
@@ -72,6 +72,7 @@ iptables-restore -t < /etc/iptables.up.rules
 netfilter-persistent save
 netfilter-persistent reload
 systemctl daemon-reload
+# // Enable & Start Service SlowDNS
 systemctl stop client-sldns
 systemctl stop server-sldns
 systemctl enable client-sldns
