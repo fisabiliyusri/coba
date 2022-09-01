@@ -48,7 +48,7 @@ cat > /etc/systemd/system/stunnel5.service << END
 [Unit]
 Description=Stunnel5 Service
 Documentation=https://stunnel.org
-Documentation=https://github.com/Akbar218
+Documentation=https://nekopoi.care
 After=syslog.target network-online.target
 
 [Service]
