@@ -73,6 +73,20 @@ systemctl restart dropbear
 /etc/init.d/dropbear restart
 
 sleep 1
+echo -e "[ ${green}SERVICE${NC} ]  Enable & restart SSH SlowDNS"
+systemctl restart sshd
+pkill sldns-server
+pkill sldns-client
+systemctl stop client-sldns
+systemctl stop server-sldns
+systemctl enable client-sldns
+systemctl enable server-sldns
+systemctl start client-sldns
+systemctl start server-sldns
+systemctl restart client-sldns
+systemctl restart server-sldns
+
+sleep 1
 echo -e "[ ${green}SERVICE${NC} ]  Enable & restart NGINX  "
 systemctl enable nginx
 systemctl restart nginx
@@ -80,8 +94,8 @@ systemctl restart nginx
 
 sleep 1
 echo -e "[ ${green}SERVICE${NC} ]  Enable & restart SSH Websocket "
-systemctl enable xray
-systemctl restart xray
+systemctl enable ws-sl
+systemctl restart ws-sl
 
 sleep 1
 echo -e "[ ${green}SERVICE${NC} ]  Enable & restart SSLH "
