@@ -45,6 +45,10 @@ echo -e "[ ${green}INFO${NC} ] Downloading and Installing Stunnel"
 echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal Stunnel"
 
 sleep 1
+echo -e "[ ${green}INFO${NC} ] Downloading and Installing Certificate"
+echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal Sertifikat"
+
+sleep 1
 echo -e "[ ${green}INFO${NC} ] Downloading and Installing Nginx"
 echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal Nginx"
 
@@ -56,10 +60,8 @@ sleep 1
 echo -e "[ ${green}INFO${NC} ] Downloading and Installing MENU"
 echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal MENU"
 
-sleep 1
-echo -e "[ ${green}INFO${NC} ] Downloading and Installing Certificate"
-echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal Sertifikat"
 
+#restart
 sleep 1
 echo -e "[ ${green}SERVICE${NC} ] Restart All service"
 systemctl daemon-reload
