@@ -11,6 +11,14 @@ apt-get remove --purge exim4 -y
 apt -y install wget curl
 apt -y install net-tools
 
+# 
+apt -y install bzip2
+apt -y install gzip
+apt -y install coreutils
+apt -y install screen 
+apt -y install curl
+apt -y install unzip
+
 # Install Requirements Tools
 apt install ruby -y
 apt install python -y
@@ -43,6 +51,7 @@ apt install zlib1g-dev -y
 apt install libssl-dev -y
 apt install libssl1.0-dev -y
 apt install dos2unix -y
+apt install nano -y
 
 #
 # install
