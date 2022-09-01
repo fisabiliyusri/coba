@@ -108,4 +108,4 @@ sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dr
 
 # Ganti Banner
 wget -O /etc/issue.net "https://${akbarvpn}/issue.net"
-#
+
