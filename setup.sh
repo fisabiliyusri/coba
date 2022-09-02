@@ -43,7 +43,7 @@ sleep 1
 echo -e "[ ${green}INFO${NC} ] Downloading and Installing OpenSSH"
 echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal OpenSSH"
 echo -e "[ ${green}INFO${NC} ] Downloading and Installing Dropbear"
-echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal Dropbear
+echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal Dropbear"
 sleep 1
 wget https://raw.githubusercontent.com/fisabiliyusri/coba/main/ssh/ssh.sh && chmod +x ssh.sh && ./ssh.sh
 sleep 1
