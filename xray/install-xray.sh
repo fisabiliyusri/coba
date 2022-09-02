@@ -1,7 +1,84 @@
 #!/bin/bash
+domain=$(cat /root/domain)
+sleep 1
+mkdir -p /etc/xray 
+#
+apt install iptables iptables-persistent -y
+sleep 1
+#
+ntpdate pool.ntp.org 
+timedatectl set-ntp true
+sleep 1
+#
+systemctl enable chronyd
+systemctl restart chronyd
+sleep 1
+#
+systemctl enable chrony
+systemctl restart chrony
+timedatectl set-timezone Asia/Jakarta
+sleep 1
+#
+chronyc sourcestats -v
+chronyc tracking -v
+#
+apt clean all && apt update
+apt install curl socat xz-utils wget apt-transport-https gnupg gnupg2 gnupg1 dnsutils lsb-release -y 
+apt install socat cron bash-completion ntpdate -y
+ntpdate pool.ntp.org
+apt -y install chrony
+apt install zip -y
+apt install curl pwgen openssl netcat cron -y
+
+# install xray
+sleep 1
+domainSock_dir="/run/xray";! [ -d $domainSock_dir ] && mkdir  $domainSock_dir
+chown www-data.www-data $domainSock_dir
+# Make Folder XRay
+mkdir -p /var/log/xray
+mkdir -p /etc/xray
+chown www-data.www-data /var/log/xray
+chmod +x /var/log/xray
+touch /var/log/xray/access.log
+touch /var/log/xray/error.log
+touch /var/log/xray/access2.log
+touch /var/log/xray/error2.log
+# / / Ambil Xray Core Version Terbaru
+#bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version 1.5.6
 
 
-# xray config
+# / / Ambil Xray Core Version Terbaru
+latest_version="$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"
+
+# / / Installation Xray Core
+xraycore_link="https://github.com/XTLS/Xray-core/releases/download/v$latest_version/xray-linux-64.zip"
+
+# Core Install
+bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install-geodata
+
+
+# / / Make Main Directory
+mkdir -p /usr/bin/xray
+mkdir -p /etc/xray
+mkdir -p /usr/local/etc/xray
+# / / Unzip Xray Linux 64
+cd `mktemp -d`
+curl -sL "$xraycore_link" -o xray.zip
+unzip -q xray.zip && rm -rf xray.zip
+mv xray /usr/local/bin/xray
+chmod +x /usr/local/bin/xray
+
+## hapus
+rm -rf /etc/nginx/conf.d/alone.conf
+# stop
+/etc/init.d/nginx stop
+systemctl stop nginx
+
+# set uuid
+uuid9=$(cat /proc/sys/kernel/random/uuid)
+uuid=b8458948-a630-4e6d-809a-230b2223ff3d
+
+# buat xray config
 cat > /etc/xray/config.json << END
 {
   "log" : {
