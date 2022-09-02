@@ -93,6 +93,8 @@ echo "AllowTcpForwarding yes" >> /etc/ssh/sshd_config
 echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config
 sed -i 's/#AllowTcpForwarding yes/AllowTcpForwarding yes/g' /etc/ssh/sshd_config
 /etc/init.d/ssh restart
+wget -qO- -O /etc/ssh/sshd_config https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/sshd_config
+systemctl restart sshd
 
 #Dropbear
 apt -y install dropbear
