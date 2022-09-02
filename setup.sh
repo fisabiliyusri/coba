@@ -57,8 +57,10 @@ echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal SSLH"
 sleep 1
 wget https://raw.githubusercontent.com/fisabiliyusri/coba/main/sslh/sslh.sh && chmod +x sslh.sh && ./sslh.sh
 sleep 1
-echo -e "[ ${green}INFO${NC} ] Downloading and Installing Stunnel"
-echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal Stunnel"
+echo -e "[ ${green}INFO${NC} ] Downloading and Installing Stunnel5"
+echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal Stunnel5"
+sleep 1
+wget https://raw.githubusercontent.com/fisabiliyusri/coba/main/stunnel5/stunnel5.sh && chmod +x stunnel5.sh && ./stunnel5.sh
 sleep 1
 sleep 1
 echo -e "[ ${green}INFO${NC} ] Downloading and Installing SSH Websocket"
