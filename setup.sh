@@ -66,7 +66,7 @@ sleep 1
 echo -e "[ ${green}INFO${NC} ] Downloading and Installing SSH Websocket"
 echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal SSH Websocket"
 sleep 1
-wget https://raw.githubusercontent.com/fisabiliyusri/coba/main/websocket/nginx.sh && chmod +x websocket.sh && ./websocket.sh
+wget https://raw.githubusercontent.com/fisabiliyusri/coba/main/websocket/websocket.sh && chmod +x websocket.sh && ./websocket.sh
 sleep 1
 echo -e "[ ${green}INFO${NC} ] Downloading and Installing Certificate"
 echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal Sertifikat"
