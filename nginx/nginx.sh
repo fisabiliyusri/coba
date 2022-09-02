@@ -36,11 +36,12 @@ wget -O /home/vps/public_html/index.html "https://${wisnuvpn}/index.html"
 ## Hapus
 systemctl stop nginx
 rm -rf /etc/nginx/conf.d/alone.conf
-# nginx 
+# STOP
 /etc/init.d/nginx stop
 mkdir -p /home/vps/public_html
-
-# WOY
+# U
+chown -R www-data:www-data /home/vps/public_html
+# U
 # Setting nginx config
 cat >/etc/nginx/conf.d/xray.conf <<EOF
     server {
