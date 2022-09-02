@@ -40,6 +40,12 @@ echo -e "[ ${green}INFO${NC} ] dalam proses pemasangan alat"
 sleep 1
 #wget https://raw.githubusercontent.com/fisabiliyusri/coba/main/alat/alat.sh && chmod +x alat.sh && ./alat.sh
 sleep 1
+sleep 1
+echo -e "[ ${green}INFO${NC} ] DONE... ALAT"
+sleep 1
+echo -e "[ ${green}INFO${NC} ] in the process of installing tools"
+echo -e "[ ${green}INFO${NC} ] dalam proses pemasangan alat"
+sleep 1
 echo "Progress..."
 echo "Sedang berlangsung..."
 sleep 3
@@ -56,6 +62,9 @@ echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal Dropbear"
 sleep 1
 wget https://raw.githubusercontent.com/fisabiliyusri/coba/main/ssh/ssh.sh && chmod +x ssh.sh && ./ssh.sh
 sleep 1
+sleep 1
+echo -e "[ ${green}INFO${NC} ] DONE... SSH"
+sleep 1
 echo "Progress..."
 echo "Sedang berlangsung..."
 sleep 3
@@ -69,6 +78,9 @@ echo -e "[ ${green}INFO${NC} ] Downloading and Installing SlowDNS"
 echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal SlowDNS"
 sleep 1
 wget https://raw.githubusercontent.com/fisabiliyusri/coba/main/slowdns/slowdns.sh && chmod +x slowdns.sh && ./slowdns.sh
+sleep 1
+sleep 1
+echo -e "[ ${green}INFO${NC} ] DONE... SLOWDNS"
 sleep 1
 echo "Progress..."
 echo "Sedang berlangsung..."
@@ -84,8 +96,8 @@ echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal SSLH"
 sleep 1
 wget https://raw.githubusercontent.com/fisabiliyusri/coba/main/sslh/sslh.sh && chmod +x sslh.sh && ./sslh.sh
 sleep 1
-echo -e "[ ${green}INFO${NC} ] Downloading and Installing Stunnel5"
-echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal Stunnel5"
+sleep 1
+echo -e "[ ${green}INFO${NC} ] DONE... SSLH"
 sleep 1
 echo "Progress..."
 echo "Sedang berlangsung..."
@@ -97,7 +109,13 @@ echo "do not exit terminal or application"
 echo "Jika masih dalam tahap instalasi..."
 echo "jangan keluar dari terminal atau aplikasi"
 sleep 1
+echo -e "[ ${green}INFO${NC} ] Downloading and Installing Stunnel5"
+echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal Stunnel5"
+sleep 1
 wget https://raw.githubusercontent.com/fisabiliyusri/coba/main/stunnel5/stunnel5.sh && chmod +x stunnel5.sh && ./stunnel5.sh
+sleep 1
+sleep 1
+echo -e "[ ${green}INFO${NC} ] DONE... STUNNEL5"
 sleep 1
 echo "Progress..."
 echo "Sedang berlangsung..."
@@ -115,6 +133,8 @@ echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal SSH Websocket"
 sleep 1
 wget https://raw.githubusercontent.com/fisabiliyusri/coba/main/websocket/websocket.sh && chmod +x websocket.sh && ./websocket.sh
 sleep 1
+echo -e "[ ${green}INFO${NC} ] DONE... SSH WEBSOCKET"
+sleep 1
 echo -e "[ ${green}INFO${NC} ] Downloading and Installing Certificate"
 echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal Sertifikat"
 sleep 1
@@ -124,14 +144,30 @@ echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal Nginx"
 sleep 1
 wget https://raw.githubusercontent.com/fisabiliyusri/coba/main/nginx/nginx.sh && chmod +x nginx.sh && ./nginx.sh
 sleep 1
+echo -e "[ ${green}INFO${NC} ] DONE... NGINX"
+sleep 1
+echo "Progress..."
+echo "Sedang berlangsung..."
+sleep 3
+echo "please read, the process of installing all scripts takes 10 minutes to 30 minutes"
+echo "silahkan dibaca, proses pemasangan semua script memakan waktu paling lama 10 menit sampai 30 menit"
+echo "If it's still in the installation stage..."
+echo "do not exit terminal or application"
+echo "Jika masih dalam tahap instalasi..."
+echo "jangan keluar dari terminal atau aplikasi"
+sleep 1
 echo -e "[ ${green}INFO${NC} ] Downloading and Installing XRAY"
 echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal XRAY"
 sleep 1
 wget https://raw.githubusercontent.com/fisabiliyusri/coba/main/xray/xray.sh && chmod +x xray.sh && ./xray.sh
 sleep 1
+echo -e "[ ${green}INFO${NC} ] DONE... XRAY"
+sleep 1
 echo -e "[ ${green}INFO${NC} ] Downloading and Installing MENU"
 echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal MENU"
 sleep 1
+sleep 1
+echo -e "[ ${green}INFO${NC} ] DONE... MENU"
 sleep 1
 #restart
 sleep 1
