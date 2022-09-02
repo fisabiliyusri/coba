@@ -158,7 +158,8 @@ echo "   - SSH Dropbear               : 109,143,300,1153,"  | tee -a log-install
 echo "   - SSH SlowDNS                : 2269,3469"  | tee -a log-install.txt
 echo "   - SSH Websocket HTTP         : 80"  | tee -a log-install.txt
 echo "   - SSH Websocket SSL/TLS      : 443"  | tee -a log-install.txt
-echo "   - Stunnel5                   : 445"  | tee -a log-install.txt
+echo "   - SSH Direct                 : 8000"  | tee -a log-install.txt
+echo "   - SSH Stunnel5               : 8000"  | tee -a log-install.txt
 echo "   - SSLH                       : 8000"  | tee -a log-install.txt
 echo "   - Nginx                      : 89,80,443"  | tee -a log-install.txt
 echo "   - XRAYS TROJAN WS TLS        : 443"  | tee -a log-install.txt
