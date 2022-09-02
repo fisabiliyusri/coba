@@ -1,3 +1,4 @@
+#!/bin/bash
 # Install SSLH
 apt -y install sslh
 rm -f /etc/default/sslh
