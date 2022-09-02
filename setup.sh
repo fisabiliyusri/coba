@@ -161,6 +161,7 @@ echo "   - SSH Websocket SSL/TLS      : 443"  | tee -a log-install.txt
 echo "   - SSH Direct/HTTP/SSL        : 8000"  | tee -a log-install.txt
 echo "   - SSH Stunnel5               : 8000"  | tee -a log-install.txt
 echo "   - SSLH                       : 8000"  | tee -a log-install.txt
+echo "   - OpenVPN TCP/Websocket      : 80,443,8000"  | tee -a log-install.txt
 echo "   - Nginx                      : 89,80,443"  | tee -a log-install.txt
 echo "   - XRAYS TROJAN WS TLS        : 443"  | tee -a log-install.txt
 echo "   - XRAYS SHADOWSOCKS WS TLS   : 443"  | tee -a log-install.txt
