@@ -43,9 +43,6 @@ sleep 1
 sleep 1
 echo -e "[ ${green}INFO${NC} ] DONE... ALAT"
 sleep 1
-echo -e "[ ${green}INFO${NC} ] in the process of installing tools"
-echo -e "[ ${green}INFO${NC} ] dalam proses pemasangan alat"
-sleep 1
 echo "Progress..."
 echo "Sedang berlangsung..."
 sleep 3
