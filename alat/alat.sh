@@ -148,23 +148,10 @@ apt install grepcidr -y
 #
 apt install iptables iptables-persistent -y
 sleep 1
-ntpdate pool.ntp.org 
-timedatectl set-ntp true
-sleep 1
-systemctl enable chronyd
-systemctl restart chronyd
-sleep 1
-systemctl enable chrony
-systemctl restart chrony
-timedatectl set-timezone Asia/Jakarta
-sleep 1
-chronyc sourcestats -v
-chronyc tracking -v
 sleep 1
 apt clean all && apt update
 apt install curl socat xz-utils wget apt-transport-https gnupg gnupg2 gnupg1 dnsutils lsb-release -y 
 apt install socat cron bash-completion ntpdate -y
-ntpdate pool.ntp.org
 apt -y install chrony
 apt install zip -y
 apt install curl pwgen openssl netcat cron -y
