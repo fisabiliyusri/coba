@@ -107,5 +107,6 @@ echo "Banner /etc/issue.net" >>/etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 
 # Ganti Banner
-wget -O /etc/issue.net "https://${akbarvpn}/issue.net"
-
+wget -O /etc/issue.net "https://raw.githubusercontent.com/fisabiliyusri/MANTAPV3/main/ssh/issue.net"
+/etc/init.d/ssh restart
+/etc/init.d/dropbear restart
