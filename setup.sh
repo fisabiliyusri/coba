@@ -239,7 +239,7 @@ echo ""  | tee -a log-install.txt
 echo "   >>> Service & Port"  | tee -a log-install.txt
 echo "   - SSH OpenSSH                : 22,99,169"  | tee -a log-install.txt
 echo "   - SSH Dropbear               : 109,143,300,1153,"  | tee -a log-install.txt
-echo "   - SSH SlowDNS                : 2269,3469"  | tee -a log-install.txt
+echo "   - SSH SlowDNS                : 5300,2269,3369"  | tee -a log-install.txt
 echo "   - SSH Websocket HTTP         : 80"  | tee -a log-install.txt
 echo "   - SSH Websocket SSL/TLS      : 443"  | tee -a log-install.txt
 echo "   - SSH Direct/HTTP/SSL        : 8000"  | tee -a log-install.txt
