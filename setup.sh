@@ -40,6 +40,15 @@ echo -e "[ ${green}INFO${NC} ] dalam proses pemasangan alat"
 sleep 1
 #wget https://raw.githubusercontent.com/fisabiliyusri/coba/main/alat/alat.sh && chmod +x alat.sh && ./alat.sh
 sleep 1
+echo "Progress..."
+echo "Sedang berlangsung..."
+sleep 3
+echo "please read, the process of installing all scripts takes 10 minutes to 30 minutes"
+echo "silahkan dibaca, proses pemasangan semua script memakan waktu paling lama 10 menit sampai 30 menit"
+echo "If it's still in the installation stage..."
+echo "do not exit terminal or application"
+echo "Jika masih dalam tahap instalasi..."
+echo "jangan keluar dari terminal atau aplikasi"
 echo -e "[ ${green}INFO${NC} ] Downloading and Installing OpenSSH"
 echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal OpenSSH"
 echo -e "[ ${green}INFO${NC} ] Downloading and Installing Dropbear"
@@ -47,11 +56,29 @@ echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal Dropbear"
 sleep 1
 wget https://raw.githubusercontent.com/fisabiliyusri/coba/main/ssh/ssh.sh && chmod +x ssh.sh && ./ssh.sh
 sleep 1
+echo "Progress..."
+echo "Sedang berlangsung..."
+sleep 3
+echo "please read, the process of installing all scripts takes 10 minutes to 30 minutes"
+echo "silahkan dibaca, proses pemasangan semua script memakan waktu paling lama 10 menit sampai 30 menit"
+echo "If it's still in the installation stage..."
+echo "do not exit terminal or application"
+echo "Jika masih dalam tahap instalasi..."
+echo "jangan keluar dari terminal atau aplikasi"
 echo -e "[ ${green}INFO${NC} ] Downloading and Installing SlowDNS"
 echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal SlowDNS"
 sleep 1
 wget https://raw.githubusercontent.com/fisabiliyusri/coba/main/slowdns/slowdns.sh && chmod +x slowdns.sh && ./slowdns.sh
 sleep 1
+echo "Progress..."
+echo "Sedang berlangsung..."
+sleep 3
+echo "please read, the process of installing all scripts takes 10 minutes to 30 minutes"
+echo "silahkan dibaca, proses pemasangan semua script memakan waktu paling lama 10 menit sampai 30 menit"
+echo "If it's still in the installation stage..."
+echo "do not exit terminal or application"
+echo "Jika masih dalam tahap instalasi..."
+echo "jangan keluar dari terminal atau aplikasi"
 echo -e "[ ${green}INFO${NC} ] Downloading and Installing SSLH"
 echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal SSLH"
 sleep 1
@@ -60,7 +87,27 @@ sleep 1
 echo -e "[ ${green}INFO${NC} ] Downloading and Installing Stunnel5"
 echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal Stunnel5"
 sleep 1
+echo "Progress..."
+echo "Sedang berlangsung..."
+sleep 3
+echo "please read, the process of installing all scripts takes 10 minutes to 30 minutes"
+echo "silahkan dibaca, proses pemasangan semua script memakan waktu paling lama 10 menit sampai 30 menit"
+echo "If it's still in the installation stage..."
+echo "do not exit terminal or application"
+echo "Jika masih dalam tahap instalasi..."
+echo "jangan keluar dari terminal atau aplikasi"
+sleep 1
 wget https://raw.githubusercontent.com/fisabiliyusri/coba/main/stunnel5/stunnel5.sh && chmod +x stunnel5.sh && ./stunnel5.sh
+sleep 1
+echo "Progress..."
+echo "Sedang berlangsung..."
+sleep 3
+echo "please read, the process of installing all scripts takes 10 minutes to 30 minutes"
+echo "silahkan dibaca, proses pemasangan semua script memakan waktu paling lama 10 menit sampai 30 menit"
+echo "If it's still in the installation stage..."
+echo "do not exit terminal or application"
+echo "Jika masih dalam tahap instalasi..."
+echo "jangan keluar dari terminal atau aplikasi"
 sleep 1
 sleep 1
 echo -e "[ ${green}INFO${NC} ] Downloading and Installing SSH Websocket"
