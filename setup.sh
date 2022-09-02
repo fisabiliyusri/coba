@@ -38,7 +38,7 @@ echo "jangan keluar dari terminal atau aplikasi"
 echo -e "[ ${green}INFO${NC} ] in the process of installing tools"
 echo -e "[ ${green}INFO${NC} ] dalam proses pemasangan alat"
 sleep 1
-wget https://raw.githubusercontent.com/fisabiliyusri/coba/main/alat/alat.sh && chmod +x alat.sh && ./alat.sh
+#wget https://raw.githubusercontent.com/fisabiliyusri/coba/main/alat/alat.sh && chmod +x alat.sh && ./alat.sh
 sleep 1
 echo -e "[ ${green}INFO${NC} ] Downloading and Installing OpenSSH"
 echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal OpenSSH"
@@ -139,7 +139,6 @@ echo -e "[ ${green}SERVICE${NC} ]  Enable & restart xray "
 systemctl enable xray
 systemctl restart xray
 systemctl restart nginx
-
 
 # Status
 #SELESAI
