@@ -41,27 +41,27 @@ echo -e "[ ${green}INFO${NC} ] Downloading and Installing Dropbear"
 echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal Dropbear
 wget https://raw.githubusercontent.com/fisabiliyusri/coba/main/ssh/ssh.sh && chmod +x ssh.sh && ./ssh.sh
 sleep 1
+
 echo -e "[ ${green}INFO${NC} ] Downloading and Installing SlowDNS"
 echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal SlowDNS"
 wget https://raw.githubusercontent.com/fisabiliyusri/coba/main/slowdns/slowdns.sh && chmod +x slowdns.sh && ./slowdns.sh
+sleep 1
+
+echo -e "[ ${green}INFO${NC} ] Downloading and Installing SSLH"
+echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal SSLH"
+wget https://raw.githubusercontent.com/fisabiliyusri/coba/main/sslh/sslh.sh && chmod +x sslh.sh && ./sslh.sh
+sleep 1
+
+echo -e "[ ${green}INFO${NC} ] Downloading and Installing Stunnel"
+echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal Stunnel"
+
 sleep 1
 echo -e "[ ${green}INFO${NC} ] Downloading and Installing SSH Websocket"
 echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal SSH Websocket"
 wget https://raw.githubusercontent.com/fisabiliyusri/coba/main/websocket/nginx.sh && chmod +x websocket.sh && ./websocket.sh
 sleep 1
-sleep 1
-echo -e "[ ${green}INFO${NC} ] Downloading and Installing SSLH"
-echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal SSLH"
-wget https://raw.githubusercontent.com/fisabiliyusri/coba/main/sslh/sslh.sh && chmod +x sslh.sh && ./sslh.sh
-sleep 1
-sleep 1
-echo -e "[ ${green}INFO${NC} ] Downloading and Installing Stunnel"
-echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal Stunnel"
-
-sleep 1
 echo -e "[ ${green}INFO${NC} ] Downloading and Installing Certificate"
 echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal Sertifikat"
-
 sleep 1
 echo -e "[ ${green}INFO${NC} ] Downloading and Installing Nginx"
 echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal Nginx"
@@ -70,7 +70,6 @@ sleep 1
 echo -e "[ ${green}INFO${NC} ] Downloading and Installing XRAY"
 echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal XRAY"
 wget https://raw.githubusercontent.com/fisabiliyusri/coba/main/xray/xray.sh && chmod +x xray.sh && ./xray.sh
-sleep 1
 sleep 1
 echo -e "[ ${green}INFO${NC} ] Downloading and Installing MENU"
 echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal MENU"
