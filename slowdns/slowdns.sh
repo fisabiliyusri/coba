@@ -3,7 +3,7 @@
 # 2022 SLOWDNS
 # ===============================================
 apt update -y
-rm -rf /etc/slowdns
+#rm -rf /etc/slowdns
 mkdir -m 777 /etc/slowdns
 nameserver=$(cat /etc/slowdns/nsdomain)
 # SSH SlowDNS
