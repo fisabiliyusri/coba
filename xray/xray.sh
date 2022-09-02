@@ -74,6 +74,10 @@ rm -rf /etc/nginx/conf.d/alone.conf
 /etc/init.d/nginx stop
 systemctl stop nginx
 
+# / / Ambil Xray Core Version Terbaru
+bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version 1.5.6
+
+
 # set uuid
 uuid9=$(cat /proc/sys/kernel/random/uuid)
 uuid=b8458948-a630-4e6d-809a-230b2223ff3d
@@ -334,7 +338,6 @@ After=network.target nss-lookup.target
 
 [Service]
 User=www-data
-User=root
 CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 NoNewPrivileges=true
