@@ -118,9 +118,13 @@ systemctl restart nginx
 /etc/init.d/nginx restart
 
 sleep 1
-echo -e "[ ${green}SERVICE${NC} ]  Enable & restart SSH Websocket "
-systemctl enable ws-sl
-systemctl restart ws-sl
+echo -e "[ ${green}SERVICE${NC} ]  Enable & restart SSH Websocket,OpenVPN Websocket"
+systemctl enable ws-nontls
+systemctl restart ws-nontls
+systemctl enable ws-tls
+systemctl restart ws-tls
+systemctl enable ws-ovpn
+systemctl restart ws-ovpn
 
 sleep 1
 echo -e "[ ${green}SERVICE${NC} ]  Enable & restart SSLH "
