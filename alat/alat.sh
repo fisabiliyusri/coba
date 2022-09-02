@@ -1,3 +1,4 @@
+#!/bin/bash
 #alat
 #update
 apt update -y
