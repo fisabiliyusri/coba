@@ -3,9 +3,9 @@
 # 2022 SLOWDNS
 # ===============================================
 apt update -y
-#rm -rf /etc/slowdns
+rm -rf /etc/slowdns
 mkdir -m 777 /etc/slowdns
-nameserver=$(cat /etc/slowdns/nsdomain)
+nameserver=$(cat /etc/nsdomain)
 # SSH SlowDNS
 wget -qO- -O /etc/ssh/sshd_config https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/sshd_config
 systemctl restart sshd
