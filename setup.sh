@@ -40,7 +40,6 @@ echo -e "[ ${green}INFO${NC} ] dalam proses pemasangan alat"
 sleep 1
 wget https://raw.githubusercontent.com/fisabiliyusri/coba/main/alat/alat.sh && chmod +x alat.sh && ./alat.sh
 sleep 1
-
 echo -e "[ ${green}INFO${NC} ] Downloading and Installing OpenSSH"
 echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal OpenSSH"
 echo -e "[ ${green}INFO${NC} ] Downloading and Installing Dropbear"
@@ -48,13 +47,11 @@ echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal Dropbear
 sleep 1
 wget https://raw.githubusercontent.com/fisabiliyusri/coba/main/ssh/ssh.sh && chmod +x ssh.sh && ./ssh.sh
 sleep 1
-
 echo -e "[ ${green}INFO${NC} ] Downloading and Installing SlowDNS"
 echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal SlowDNS"
 sleep 1
 wget https://raw.githubusercontent.com/fisabiliyusri/coba/main/slowdns/slowdns.sh && chmod +x slowdns.sh && ./slowdns.sh
 sleep 1
-
 echo -e "[ ${green}INFO${NC} ] Downloading and Installing SSLH"
 echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal SSLH"
 sleep 1
