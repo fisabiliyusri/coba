@@ -60,48 +60,37 @@ echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal SSLH"
 sleep 1
 wget https://raw.githubusercontent.com/fisabiliyusri/coba/main/sslh/sslh.sh && chmod +x sslh.sh && ./sslh.sh
 sleep 1
-
 echo -e "[ ${green}INFO${NC} ] Downloading and Installing Stunnel"
 echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal Stunnel"
 sleep 1
-
 sleep 1
-
 echo -e "[ ${green}INFO${NC} ] Downloading and Installing SSH Websocket"
 echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal SSH Websocket"
 sleep 1
 wget https://raw.githubusercontent.com/fisabiliyusri/coba/main/websocket/nginx.sh && chmod +x websocket.sh && ./websocket.sh
 sleep 1
-
 echo -e "[ ${green}INFO${NC} ] Downloading and Installing Certificate"
 echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal Sertifikat"
 sleep 1
-
 sleep 1
-
 echo -e "[ ${green}INFO${NC} ] Downloading and Installing Nginx"
 echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal Nginx"
 sleep 1
 wget https://raw.githubusercontent.com/fisabiliyusri/coba/main/nginx/nginx.sh && chmod +x nginx.sh && ./nginx.sh
 sleep 1
-
 echo -e "[ ${green}INFO${NC} ] Downloading and Installing XRAY"
 echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal XRAY"
 sleep 1
 wget https://raw.githubusercontent.com/fisabiliyusri/coba/main/xray/xray.sh && chmod +x xray.sh && ./xray.sh
 sleep 1
-
 echo -e "[ ${green}INFO${NC} ] Downloading and Installing MENU"
 echo -e "[ ${green}INFO${NC} ] Mengunduh dan Menginstal MENU"
 sleep 1
-
 sleep 1
-
 #restart
 sleep 1
 echo -e "[ ${green}SERVICE${NC} ] Restart All service"
 systemctl daemon-reload
-
 sleep 1
 echo -e "[ ${green}SERVICE${NC} ]  Enable & restart SSH OpenSSH Dropbear"
 systemctl restart sshd
@@ -109,7 +98,6 @@ systemctl restart sshd
 systemctl enable dropbear
 systemctl restart dropbear
 /etc/init.d/dropbear restart
-
 sleep 1
 echo -e "[ ${green}SERVICE${NC} ]  Enable & restart SSH SlowDNS"
 systemctl restart sshd
