@@ -142,6 +142,7 @@ systemctl restart nginx
 
 # Status
 #SELESAI
+cd
 echo " "
 echo "Installation has been completed!!"echo " "
 echo "============================================================================" | tee -a log-install.txt
@@ -192,4 +193,5 @@ echo "   - Full Orders For Various Services" | tee -a log-install.txt
 echo "   - White Label" | tee -a log-install.txt
 echo "   - Installation Log --> /root/log-install.txt"  | tee -a log-install.txt
 echo " Reboot 15 Sec"
+cd
 sleep 15
