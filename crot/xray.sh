@@ -136,6 +136,24 @@ cat > /etc/xray/config.json << END
         }
      },
     {
+      "listen": "/run/xray/trojan_tcp.sock",
+      "protocol": "trojan",
+      "settings": {
+          "decryption":"none",		
+           "clients": [
+              {
+                 "password": "${uuid}"
+#trojantcp
+              }
+          ],
+         "udp": true
+       },
+       "streamSettings":{
+           "network": "tcp"
+            }
+         }
+     },
+    {
       "listen": "/run/xray/trojan_ws.sock",
       "protocol": "trojan",
       "settings": {
