@@ -166,11 +166,14 @@ cat > /etc/xray/config.json << END
 #trojantcp
               }
           ],
-         "udp": false
+         "udp": true
        },
        "streamSettings":{
            "network": "tcp",
-           "security": "none"
+           "security": "none",
+           "tcpSettings": {
+               "acceptProxyProtocol": true"
+            }
          }
      },
     {
