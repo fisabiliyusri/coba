@@ -149,7 +149,12 @@ cat > /etc/xray/config.json << END
          "udp": true
        },
        "streamSettings":{
-           "network": "tcp"
+           "network": "tcp",
+           "security": "tls",
+           "tlsSettings": {
+               "alpn": [
+                   "http/1.1"
+               ],
             }
          }
      },
