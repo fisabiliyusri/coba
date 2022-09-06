@@ -136,29 +136,6 @@ cat > /etc/xray/config.json << END
         }
      },
     {
-      "listen": "/run/xray/trojan_tcp.sock",
-      "protocol": "trojan",
-      "settings": {
-          "decryption":"none",		
-           "clients": [
-              {
-                 "password": "${uuid}"
-#trojantcp
-              }
-          ],
-         "udp": true
-       },
-       "streamSettings":{
-           "network": "tcp",
-           "security": "tls",
-           "tlsSettings": {
-               "alpn": [
-                   "http/1.1"
-               ],
-            }
-         }
-     },
-    {
       "listen": "/run/xray/trojan_ws.sock",
       "protocol": "trojan",
       "settings": {
@@ -176,6 +153,24 @@ cat > /etc/xray/config.json << END
            "wsSettings": {
                "path": "/xraytrojanws"
             }
+         }
+     },
+    {
+      "listen": "/run/xray/trojan_tcp.sock",
+      "protocol": "trojan",
+      "settings": {
+          "decryption":"none",		
+           "clients": [
+              {
+                 "password": "${uuid}"
+#trojantcp
+              }
+          ],
+         "udp": false
+       },
+       "streamSettings":{
+           "network": "tcp",
+           "security": "none"
          }
      },
     {
