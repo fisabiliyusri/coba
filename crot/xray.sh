@@ -79,6 +79,10 @@ bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release
 uuid9=$(cat /proc/sys/kernel/random/uuid)
 uuid=b8458948-a630-4e6d-809a-230b2223ff3d
 
+# // Certificate File
+path_crt="/etc/xray/xray.crt"
+path_key="/etc/xray/xray.key"
+
 # buat xray config
 cat > /etc/xray/config.json << END
 {
