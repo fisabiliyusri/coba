@@ -383,8 +383,57 @@ systemctl restart superxray
 sleep 1
 #
 rm -rf /etc/xray/xraysuper.json
+rm -rf /etc/xray/conf/mantap.json
+#
+cat > /etc/xray/conf/mantap.json << END
+{
+  "inbounds": [
+    {
+      "port": 999,
+      "protocol": "vless",
+      "tag": "vlessTCP",
+      "settings": {
+        "clients": [
+          {
+            "id": "${uuid}",
+            "add": "$domain",
+            "flow": "xtls-rprx-direct",
+            "email": "vlessTCP@XRAYbyRARE" 
+          }
+        ],
+        "decryption": "none",
+        "fallbacks": [
+          {
+            "dest": 8881,
+            "xver": 1
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "xtls",
+        "xtlsSettings": {
+          "minVersion": "1.2",
+          "alpn": [
+            "http/1.1",
+            "h2"
+          ],
+          "certificates": [
+            {
+              "certificateFile": "/etc/xray/xray.crt",
+              "keyFile": "/etc/xray/xray.key",
+              "ocspStapling": 3600,
+              "usage": "encipherment"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
+END
 #trojan_TCP
-cat > /etc/xray/trojan.json << END
+cat > /etc/xray/conf/trojan.json << END
 {
   "inbounds": [
     {
@@ -418,10 +467,11 @@ cat > /etc/xray/trojan.json << END
 END
 #
 rm -rf /etc/systemd/system/xraysuper.service
-cat> /etc/systemd/system/xray@trojan.service << END
+# / / Installation Xray Service
+cat > /etc/systemd/system/xray@mantap.service << END
 [Unit]
-Description=Xray Service
-Documentation=https://github.com/xtls
+Description=Xray Service Mod By SL
+Documentation=https://nekopoi.care
 After=network.target nss-lookup.target
 
 [Service]
@@ -429,11 +479,9 @@ User=root
 CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 NoNewPrivileges=true
-ExecStart=/usr/local/bin/xray run -config /etc/xray/trojan.json
+ExecStart=/usr/local/bin/xray run -confdir /etc/xray/conf
 Restart=on-failure
 RestartPreventExitStatus=23
-LimitNPROC=10000
-LimitNOFILE=1000000
 
 [Install]
 WantedBy=multi-user.target
@@ -449,7 +497,7 @@ systemctl enable superxray
 systemctl restart superxray
 #
 systemctl daemon-reload
-systemctl enable xray@trojan
-systemctl start xray@trojan
-systemctl restart xray@trojan
+systemctl enable xray@mantap
+systemctl start xray@mantap
+systemctl restart xray@mantap
 cd
