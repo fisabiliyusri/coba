@@ -519,6 +519,9 @@ cat > /etc/xray/conf/trojan.json << END
   ]
 }
 END
+#deletecopy
+rm -rf /usr/local/etc/xray/conf/*
+cp -rf /etc/xray/conf/* /usr/local/etc/xray/conf/
 #
 cat <<EOF> /etc/systemd/system/xray.service
 Description=Xray Service
