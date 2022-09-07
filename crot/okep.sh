@@ -38,9 +38,18 @@ mkdir -p /var/log/xray/
 # Stop port 80
 sudo lsof -t -i tcp:80 -s tcp:listen | sudo xargs kill
 
+
 #
-uuid9=$(cat /proc/sys/kernel/random/uuid)
-uuid=b8458948-a630-4e6d-809a-230b2223ff3d
+/etc/init.d/nginx stop
+systemctl stop nginx
+systemctl stop xray
+systemctl stop xraysuper
+
+# / / Ambil Xray Core Version Terbaru
+bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version 1.5.6
+#
+uuid=$(cat /proc/sys/kernel/random/uuid)
+#uuid=b8458948-a630-4e6d-809a-230b2223ff3d
 
 # // Certificate File
 path_crt="/etc/xray/xray.crt"
@@ -107,7 +116,6 @@ cat> /etc/xray/xrayconfig.json << END
             "settings": {
                 "clients": [
                     {
-                        "id": "${uuid}",
                         "password": "${uuid}"
 #trojan
                     }
@@ -267,7 +275,12 @@ WantedBy=multi-user.target
 
 END
 
-# enable xray tls
+# enable xray
+systemctl daemon-reload
+systemctl enable xray.service
+systemctl start xray.service
+systemctl restart xray
+# enable super
 systemctl daemon-reload
 systemctl enable xraysuper.service
 systemctl start xraysuper.service
