@@ -545,7 +545,7 @@ WantedBy=multi-user.target
 EOF
 
 systemctl stop runn
-/etc/systemd/system/superxray.service
+rm -rf /etc/systemd/system/superxray.service
 rm -rf /etc/systemd/system/runn.service
 cat > /etc/systemd/system/runn.service <<EOF
 [Unit]
@@ -608,16 +608,13 @@ netfilter-persistent reload
 systemctl daemon-reload
 sleep 1
 # Enable & restart xray
+systemctl daemon-reload
 systemctl enable xray
 systemctl restart xray
 systemctl restart nginx
 systemctl enable runn
 systemctl restart runn
-systemctl enable superxray
-systemctl restart superxray
-#
-systemctl daemon-reload
-systemctl enable superxray
-systemctl start superxray
-systemctl restart superxray
+systemctl enable xraysuper
+systemctl start xraysuper
+systemctl restart xraysuper
 cd
