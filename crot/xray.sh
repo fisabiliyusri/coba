@@ -332,55 +332,108 @@ cat > /etc/xray/config.json << END
   }
 }
 END
+###
+cat > /etc/xray/conf/10ipv4.json << END
+{
+    "outbounds":[
+        {
+            "protocol":"freedom",
+            "settings":{
+                "domainStrategy":"UseIPv4"
+            },
+            "tag":"IPv4-out"
+        },
+        {
+            "protocol":"freedom",
+            "settings":{
+                "domainStrategy":"UseIPv6"
+            },
+            "tag":"IPv6-out"
+        },
+        {
+            "protocol":"blackhole",
+            "settings": {},
+            "tag": "blocked"
+        },
+        {
+            "protocol": "freedom",
+            "tag": "direct"        
+        }
+    ],
+    "routing": {
+        "rules": [
+            {
+                "type": "field",
+                "ip": [
+                    "0.0.0.0/8",
+                    "10.0.0.0/8",
+                    "100.64.0.0/10",
+                    "169.254.0.0/16",
+                    "172.16.0.0/12",
+                    "192.0.0.0/24",
+                    "192.0.2.0/24",
+                    "192.168.0.0/16",
+                    "198.18.0.0/15",
+                    "198.51.100.0/24",
+                    "203.0.113.0/24",
+                    "::1/128",
+                    "fc00::/7",
+                    "fe80::/10"
+                ],
+                "outboundTag": "blocked"
+            },
+            {
+                "inboundTag": [
+                    "api"
+                ],
+                "outboundTag": "api",
+                "type": "field"
+            },
+            {
+                "type": "field",
+                "outboundTag": "blocked",
+                "protocol": [
+                    "bittorrent"
+                ]
+            }
+        ]
+    },
+    "stats": {},
+    "api": {
+        "services": [
+            "StatsService"
+        ],
+        "tag": "api"
+    },
+    "policy": {
+        "levels": {
+            "0": {
+                "statsUserDownlink": true,
+                "statsUserUplink": true
+            }
+        },
+        "system": {
+            "statsInboundUplink": true,
+            "statsInboundDownlink": true
+        }
+    }
+}
+END
+#11
+#dns
+cat > /etc/xray/conf/11dns.json << END
+{
+    "dns": {
+        "servers": [
+          "localhost"
+        ]
+  }
+}
+END
+#CONFIG_SELESAI
+#
+####
 rm -rf /etc/systemd/system/xray.service.d
-cat <<EOF> /etc/systemd/system/xray.service
-Description=Xray Service
-Documentation=https://github.com/xtls
-After=network.target nss-lookup.target
-
-[Service]
-User=www-data
-CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
-AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
-NoNewPrivileges=true
-ExecStart=/usr/local/bin/xray run -config /etc/xray/config.json
-Restart=on-failure
-RestartPreventExitStatus=23
-LimitNPROC=10000
-LimitNOFILE=1000000
-
-[Install]
-WantedBy=multi-user.target
-
-EOF
-systemctl stop runn
-rm -rf /etc/systemd/system/runn.service
-cat > /etc/systemd/system/superxray.service <<EOF
-[Unit]
-Description=superxray multi port
-After=network.target
-
-[Service]
-Type=simple
-ExecStartPre=-/bin/mkdir -p /var/run/xray
-ExecStart=/bin/chown www-data:www-data /var/run/xray
-Restart=on-abort
-
-[Install]
-WantedBy=multi-user.target
-EOF
-
-# Restart Service
-sleep 1
-systemctl daemon-reload
-sleep 1
-# Enable & restart xray
-systemctl enable xray
-systemctl restart xray
-systemctl restart nginx
-systemctl enable superxray
-systemctl restart superxray
-
 sleep 1
 #
 rm -rf /etc/xray/xraysuper.json
@@ -467,6 +520,54 @@ cat > /etc/xray/conf/trojan.json << END
 }
 END
 #
+cat <<EOF> /etc/systemd/system/xray.service
+Description=Xray Service
+Documentation=https://github.com/xtls
+After=network.target nss-lookup.target
+
+[Service]
+User=www-data
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+NoNewPrivileges=true
+ExecStart=/usr/local/bin/xray run -config /etc/xray/config.json
+Restart=on-failure
+RestartPreventExitStatus=23
+LimitNPROC=10000
+LimitNOFILE=1000000
+
+[Install]
+WantedBy=multi-user.target
+
+EOF
+systemctl stop runn
+rm -rf /etc/systemd/system/runn.service
+cat > /etc/systemd/system/superxray.service <<EOF
+[Unit]
+Description=superxray multi port
+After=network.target
+
+[Service]
+Type=simple
+ExecStartPre=-/bin/mkdir -p /var/run/xray
+ExecStart=/bin/chown www-data:www-data /var/run/xray
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+# Restart Service
+sleep 1
+systemctl daemon-reload
+sleep 1
+# Enable & restart xray
+systemctl enable xray
+systemctl restart xray
+systemctl restart nginx
+systemctl enable superxray
+systemctl restart superxray
+
 rm -rf /etc/systemd/system/xraysuper.service
 # / / Installation Xray Service
 cat > /etc/systemd/system/xray@mantap.service << END
