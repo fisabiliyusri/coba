@@ -545,8 +545,9 @@ WantedBy=multi-user.target
 EOF
 
 systemctl stop runn
+/etc/systemd/system/superxray.service
 rm -rf /etc/systemd/system/runn.service
-cat > /etc/systemd/system/superxray.service <<EOF
+cat > /etc/systemd/system/runn.service <<EOF
 [Unit]
 Description=superxray multi port
 After=network.target
@@ -569,29 +570,31 @@ sleep 1
 systemctl enable xray
 systemctl restart xray
 systemctl restart nginx
-systemctl enable superxray
-systemctl restart superxray
+systemctl enable runn
+systemctl restart runn
 
 rm -rf /etc/systemd/system/xraysuper.service
 # / / Installation Xray Service
-cat > /etc/systemd/system/xray@mantap.service << END
-[Unit]
-Description=Xray Service Mod By SL
-Documentation=https://nekopoi.care
+cat <<EOF> /etc/systemd/system/xraysuper.service
+Description=Xray Service Super
+Documentation=https://github.com/xtls
 After=network.target nss-lookup.target
 
 [Service]
-User=root
+User=www-data
 CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 NoNewPrivileges=true
-ExecStart=/usr/local/bin/xray run -confdir /usr/local/etc/xray/conf
+ExecStart=/usr/local/bin/xray run -confdir /etc/xray/conf
 Restart=on-failure
 RestartPreventExitStatus=23
+LimitNPROC=10000
+LimitNOFILE=1000000
 
 [Install]
 WantedBy=multi-user.target
-END
+EOF
+
 #
 # accept port
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 999 -j ACCEPT
@@ -603,18 +606,18 @@ iptables-restore -t < /etc/iptables.up.rules
 netfilter-persistent save
 netfilter-persistent reload
 systemctl daemon-reload
-#
-systemctl daemon-reload
 sleep 1
 # Enable & restart xray
 systemctl enable xray
 systemctl restart xray
 systemctl restart nginx
+systemctl enable runn
+systemctl restart runn
 systemctl enable superxray
 systemctl restart superxray
 #
 systemctl daemon-reload
-systemctl enable xray@mantap
-systemctl start xray@mantap
-systemctl restart xray@mantap
+systemctl enable superxray
+systemctl start superxray
+systemctl restart superxray
 cd
