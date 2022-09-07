@@ -156,27 +156,6 @@ cat > /etc/xray/config.json << END
          }
      },
     {
-      "listen": "/run/xray/trojan_tcp.sock",
-      "protocol": "trojan",
-      "settings": {
-          "decryption":"none",		
-           "clients": [
-              {
-                 "password": "${uuid}"
-#trojantcp
-              }
-          ],
-         "udp": true
-       },
-       "streamSettings":{
-           "network": "tcp",
-           "security": "none",
-           "tcpSettings": {
-               "acceptProxyProtocol": true"
-            }
-         }
-     },
-    {
          "listen": "127.0.0.1",
         "port": "30300",
         "protocol": "shadowsocks",
