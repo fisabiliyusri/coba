@@ -498,7 +498,7 @@ cat > /etc/xray/conf/trojan.json << END
       "settings": {
         "clients": [
           {
-            "password": "${uuid1}",
+            "password": "${uuid}",
             "email": "trojanTCP@XRAYbyRARE"
           }
         ],
