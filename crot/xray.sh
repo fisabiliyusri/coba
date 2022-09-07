@@ -538,8 +538,8 @@ LimitNOFILE=1000000
 
 [Install]
 WantedBy=multi-user.target
-
 EOF
+
 systemctl stop runn
 rm -rf /etc/systemd/system/runn.service
 cat > /etc/systemd/system/superxray.service <<EOF
