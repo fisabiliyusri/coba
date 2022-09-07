@@ -488,6 +488,17 @@ RestartPreventExitStatus=23
 WantedBy=multi-user.target
 END
 #
+# accept port
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 999 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 999 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 8881 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 8881 -j ACCEPT
+iptables-save > /etc/iptables.up.rules
+iptables-restore -t < /etc/iptables.up.rules
+netfilter-persistent save
+netfilter-persistent reload
+systemctl daemon-reload
+#
 systemctl daemon-reload
 sleep 1
 # Enable & restart xray
