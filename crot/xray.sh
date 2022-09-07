@@ -581,7 +581,7 @@ User=root
 CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 NoNewPrivileges=true
-ExecStart=/usr/local/bin/xray run -confdir /etc/xray/conf
+ExecStart=/usr/local/bin/xray run -confdir /usr/local/etc/xray/conf
 Restart=on-failure
 RestartPreventExitStatus=23
 
